@@ -62,4 +62,39 @@ end
 
 ## Fib Sequence ##
 
+# Iterative #
 
+def fib_sequence(num)
+  ## This is the starting point for each iteration
+  x = 0
+
+  # This advances the sequence numbers by 1
+  var = 1
+
+  # If num is equal to 0 return 0
+  if num == 0
+    0
+
+  # If num is equal to 1 or 2 return 1
+  elsif num == 1 || 2
+    1
+  else
+
+    # How many times we want to run the sequence
+    num.times do
+
+      # Assign a temp variable to hold updated number
+      temp = x
+
+      # Assign the starting number to the increased number from the last iteration
+      x = var
+
+      # Add two previous numbers in the sequence
+      var = temp + var
+    end
+
+    return x
+  end
+end
+
+puts fib_sequence(5)
